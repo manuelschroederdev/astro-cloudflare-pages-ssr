@@ -8,10 +8,10 @@ const { data } = await storyblokApi.get(
   'cdn/stories/home',
   {
     version: 'draft',
-  },
-  {
-    cache: 'no-cache',
   }
+  /* {
+    cache: 'no-cache',
+  } */
 )
 
 const story = data.story
