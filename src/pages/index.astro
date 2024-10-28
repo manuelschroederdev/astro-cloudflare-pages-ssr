@@ -8,10 +8,18 @@ const { data } = await storyblokApi.get(
   'cdn/stories/home',
   {
     version: 'draft',
-  }
+  },
   /* {
     cache: 'no-cache',
   } */
+  {
+    cf: {
+      // Always cache this fetch regardless of content type
+      // for a max of 5 seconds before revalidating the resource
+      cacheTtl: 5,
+      cacheEverything: true,
+    },
+  }
 )
 
 const story = data.story
